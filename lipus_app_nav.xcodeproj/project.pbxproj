@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		744363BF2CDD9CB600290069 /* lipus_app_navApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363BE2CDD9CB600290069 /* lipus_app_navApp.swift */; };
+		744363C12CDD9CB600290069 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363C02CDD9CB600290069 /* ContentView.swift */; };
+		744363C32CDD9CB900290069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744363C22CDD9CB900290069 /* Assets.xcassets */; };
+		744363C72CDD9CB900290069 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744363C62CDD9CB900290069 /* Preview Assets.xcassets */; };
+		744363D12CDD9CB900290069 /* lipus_app_navTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363D02CDD9CB900290069 /* lipus_app_navTests.swift */; };
+		744363DB2CDD9CB900290069 /* lipus_app_navUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363DA2CDD9CB900290069 /* lipus_app_navUITests.swift */; };
+		744363DD2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363DC2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		744363CD2CDD9CB900290069 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 744363B32CDD9CB600290069 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 744363BA2CDD9CB600290069;
+			remoteInfo = lipus_app_nav;
+		};
+		744363D72CDD9CB900290069 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 744363B32CDD9CB600290069 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 744363BA2CDD9CB600290069;
+			remoteInfo = lipus_app_nav;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		744363BB2CDD9CB600290069 /* lipus_app_nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lipus_app_nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		744363BE2CDD9CB600290069 /* lipus_app_navApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lipus_app_navApp.swift; sourceTree = "<group>"; };
+		744363C02CDD9CB600290069 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		744363C22CDD9CB900290069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		744363C42CDD9CB900290069 /* lipus_app_nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lipus_app_nav.entitlements; sourceTree = "<group>"; };
+		744363C62CDD9CB900290069 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		744363CC2CDD9CB900290069 /* lipus_app_navTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lipus_app_navTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		744363D02CDD9CB900290069 /* lipus_app_navTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lipus_app_navTests.swift; sourceTree = "<group>"; };
+		744363D62CDD9CB900290069 /* lipus_app_navUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lipus_app_navUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		744363DA2CDD9CB900290069 /* lipus_app_navUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lipus_app_navUITests.swift; sourceTree = "<group>"; };
+		744363DC2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lipus_app_navUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		744363B82CDD9CB600290069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744363C92CDD9CB900290069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744363D32CDD9CB900290069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		744363B22CDD9CB600290069 = {
+			isa = PBXGroup;
+			children = (
+				744363BD2CDD9CB600290069 /* lipus_app_nav */,
+				744363CF2CDD9CB900290069 /* lipus_app_navTests */,
+				744363D92CDD9CB900290069 /* lipus_app_navUITests */,
+				744363BC2CDD9CB600290069 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		744363BC2CDD9CB600290069 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				744363BB2CDD9CB600290069 /* lipus_app_nav.app */,
+				744363CC2CDD9CB900290069 /* lipus_app_navTests.xctest */,
+				744363D62CDD9CB900290069 /* lipus_app_navUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		744363BD2CDD9CB600290069 /* lipus_app_nav */ = {
+			isa = PBXGroup;
+			children = (
+				744363BE2CDD9CB600290069 /* lipus_app_navApp.swift */,
+				744363C02CDD9CB600290069 /* ContentView.swift */,
+				744363C22CDD9CB900290069 /* Assets.xcassets */,
+				744363C42CDD9CB900290069 /* lipus_app_nav.entitlements */,
+				744363C52CDD9CB900290069 /* Preview Content */,
+			);
+			path = lipus_app_nav;
+			sourceTree = "<group>";
+		};
+		744363C52CDD9CB900290069 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				744363C62CDD9CB900290069 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		744363CF2CDD9CB900290069 /* lipus_app_navTests */ = {
+			isa = PBXGroup;
+			children = (
+				744363D02CDD9CB900290069 /* lipus_app_navTests.swift */,
+			);
+			path = lipus_app_navTests;
+			sourceTree = "<group>";
+		};
+		744363D92CDD9CB900290069 /* lipus_app_navUITests */ = {
+			isa = PBXGroup;
+			children = (
+				744363DA2CDD9CB900290069 /* lipus_app_navUITests.swift */,
+				744363DC2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift */,
+			);
+			path = lipus_app_navUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		744363BA2CDD9CB600290069 /* lipus_app_nav */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 744363E02CDD9CB900290069 /* Build configuration list for PBXNativeTarget "lipus_app_nav" */;
+			buildPhases = (
+				744363B72CDD9CB600290069 /* Sources */,
+				744363B82CDD9CB600290069 /* Frameworks */,
+				744363B92CDD9CB600290069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lipus_app_nav;
+			productName = lipus_app_nav;
+			productReference = 744363BB2CDD9CB600290069 /* lipus_app_nav.app */;
+			productType = "com.apple.product-type.application";
+		};
+		744363CB2CDD9CB900290069 /* lipus_app_navTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 744363E32CDD9CB900290069 /* Build configuration list for PBXNativeTarget "lipus_app_navTests" */;
+			buildPhases = (
+				744363C82CDD9CB900290069 /* Sources */,
+				744363C92CDD9CB900290069 /* Frameworks */,
+				744363CA2CDD9CB900290069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				744363CE2CDD9CB900290069 /* PBXTargetDependency */,
+			);
+			name = lipus_app_navTests;
+			productName = lipus_app_navTests;
+			productReference = 744363CC2CDD9CB900290069 /* lipus_app_navTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		744363D52CDD9CB900290069 /* lipus_app_navUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 744363E62CDD9CB900290069 /* Build configuration list for PBXNativeTarget "lipus_app_navUITests" */;
+			buildPhases = (
+				744363D22CDD9CB900290069 /* Sources */,
+				744363D32CDD9CB900290069 /* Frameworks */,
+				744363D42CDD9CB900290069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				744363D82CDD9CB900290069 /* PBXTargetDependency */,
+			);
+			name = lipus_app_navUITests;
+			productName = lipus_app_navUITests;
+			productReference = 744363D62CDD9CB900290069 /* lipus_app_navUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		744363B32CDD9CB600290069 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					744363BA2CDD9CB600290069 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					744363CB2CDD9CB900290069 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 744363BA2CDD9CB600290069;
+					};
+					744363D52CDD9CB900290069 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 744363BA2CDD9CB600290069;
+					};
+				};
+			};
+			buildConfigurationList = 744363B62CDD9CB600290069 /* Build configuration list for PBXProject "lipus_app_nav" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 744363B22CDD9CB600290069;
+			productRefGroup = 744363BC2CDD9CB600290069 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				744363BA2CDD9CB600290069 /* lipus_app_nav */,
+				744363CB2CDD9CB900290069 /* lipus_app_navTests */,
+				744363D52CDD9CB900290069 /* lipus_app_navUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		744363B92CDD9CB600290069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				744363C72CDD9CB900290069 /* Preview Assets.xcassets in Resources */,
+				744363C32CDD9CB900290069 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744363CA2CDD9CB900290069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744363D42CDD9CB900290069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		744363B72CDD9CB600290069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				744363C12CDD9CB600290069 /* ContentView.swift in Sources */,
+				744363BF2CDD9CB600290069 /* lipus_app_navApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744363C82CDD9CB900290069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				744363D12CDD9CB900290069 /* lipus_app_navTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744363D22CDD9CB900290069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				744363DD2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift in Sources */,
+				744363DB2CDD9CB900290069 /* lipus_app_navUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		744363CE2CDD9CB900290069 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 744363BA2CDD9CB600290069 /* lipus_app_nav */;
+			targetProxy = 744363CD2CDD9CB900290069 /* PBXContainerItemProxy */;
+		};
+		744363D82CDD9CB900290069 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 744363BA2CDD9CB600290069 /* lipus_app_nav */;
+			targetProxy = 744363D72CDD9CB900290069 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		744363DE2CDD9CB900290069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		744363DF2CDD9CB900290069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		744363E12CDD9CB900290069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = lipus_app_nav/lipus_app_nav.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"lipus_app_nav/Preview Content\"";
+				DEVELOPMENT_TEAM = D3GGHJ6W66;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "proj.lipus-app-nav";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		744363E22CDD9CB900290069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = lipus_app_nav/lipus_app_nav.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"lipus_app_nav/Preview Content\"";
+				DEVELOPMENT_TEAM = D3GGHJ6W66;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "proj.lipus-app-nav";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		744363E42CDD9CB900290069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3GGHJ6W66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "proj.lipus-app-navTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lipus_app_nav.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/lipus_app_nav";
+			};
+			name = Debug;
+		};
+		744363E52CDD9CB900290069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3GGHJ6W66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "proj.lipus-app-navTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lipus_app_nav.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/lipus_app_nav";
+			};
+			name = Release;
+		};
+		744363E72CDD9CB900290069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3GGHJ6W66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "proj.lipus-app-navUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = lipus_app_nav;
+			};
+			name = Debug;
+		};
+		744363E82CDD9CB900290069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3GGHJ6W66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "proj.lipus-app-navUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = lipus_app_nav;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		744363B62CDD9CB600290069 /* Build configuration list for PBXProject "lipus_app_nav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				744363DE2CDD9CB900290069 /* Debug */,
+				744363DF2CDD9CB900290069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		744363E02CDD9CB900290069 /* Build configuration list for PBXNativeTarget "lipus_app_nav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				744363E12CDD9CB900290069 /* Debug */,
+				744363E22CDD9CB900290069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		744363E32CDD9CB900290069 /* Build configuration list for PBXNativeTarget "lipus_app_navTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				744363E42CDD9CB900290069 /* Debug */,
+				744363E52CDD9CB900290069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		744363E62CDD9CB900290069 /* Build configuration list for PBXNativeTarget "lipus_app_navUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				744363E72CDD9CB900290069 /* Debug */,
+				744363E82CDD9CB900290069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 744363B32CDD9CB600290069 /* Project object */;
+}
