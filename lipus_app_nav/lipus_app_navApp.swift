@@ -7,11 +7,23 @@
 
 import SwiftUI
 
+//@main
+//struct lipus_app_navApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//    }
+//}
+
 @main
 struct lipus_app_navApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                HomePageView()
+            }
         }
     }
 }
+
