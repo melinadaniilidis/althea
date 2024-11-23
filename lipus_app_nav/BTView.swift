@@ -15,13 +15,14 @@ import SwiftUI
 
 import CoreBluetooth
 
-class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject {
+class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CBPeripheralDelegate {
     @Published var isBluetoothEnabled = false
     @Published var discoveredPeripherals = [CBPeripheral]()
     @Published var connectedPeripheral: CBPeripheral?
 
     private var centralManager: CBCentralManager!
     var peripheralNames: [CBPeripheral: String] = [:] // Store names for peripherals
+    private var characteristicToWrite: CBCharacteristic? // Store the writable characteristic
 
     override init() {
         super.init()
@@ -47,19 +48,56 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject {
     }
     
     // Connect to the selected peripheral
-        func connect(to peripheral: CBPeripheral) {
-            centralManager.connect(peripheral, options: nil)
-            connectedPeripheral = peripheral
-            print("Connecting to peripheral: \(peripheral.name ?? "Unknown")")
+    func connect(to peripheral: CBPeripheral) {
+        centralManager.stopScan()
+        peripheral.delegate = self
+        centralManager.connect(peripheral, options: nil)
+        connectedPeripheral = peripheral
+        print("Connecting to peripheral: \(peripheral.name ?? "Unknown")")
+    }
+
+    // Disconnect from the connected peripheral
+    func disconnect(from peripheral: CBPeripheral) {
+        centralManager.cancelPeripheralConnection(peripheral)
+        print("Disconnected from peripheral: \(peripheral.name ?? "Unknown")")
+        connectedPeripheral = nil
+        characteristicToWrite = nil
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+            print("Connected to peripheral: \(peripheral.name ?? "Unknown")")
+            peripheral.discoverServices(nil) // Discover all services
+    }
+
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        if let error = error {
+            print("Error discovering services: \(error.localizedDescription)")
+            return
         }
 
-        // Disconnect from the connected peripheral
-        func disconnect(from peripheral: CBPeripheral) {
-            centralManager.cancelPeripheralConnection(peripheral)
-            print("Disconnected from peripheral: \(peripheral.name ?? "Unknown")")
-            connectedPeripheral = nil
+        guard let services = peripheral.services else { return }
+        for service in services {
+            print("Discovered service: \(service.uuid)")
+            peripheral.discoverCharacteristics(nil, for: service) // Discover all characteristics
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        if let error = error {
+            print("Error discovering characteristics: \(error.localizedDescription)")
+            return
         }
 
+        guard let characteristics = service.characteristics else { return }
+        for characteristic in characteristics {
+            print("Discovered characteristic: \(characteristic.uuid)")
+            if characteristic.properties.contains(.write) {
+                characteristicToWrite = characteristic
+                print("Writable characteristic found: \(characteristic.uuid)")
+            }
+        }
+    }
+    
     func toggleBluetooth() {
         if centralManager.state == .poweredOn {
             centralManager.stopScan()
@@ -73,13 +111,21 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject {
 
         // Function to send data to a connected peripheral
     // transmitting data
-        func sendData(to peripheral: CBPeripheral, data: Data) {
-            let characteristicUUID = CBUUID(string: "2A56")
-            if let characteristic = findCharacteristic(with: characteristicUUID, for: peripheral) {
-                peripheral.writeValue(data, for: characteristic, type: .withoutResponse)
-            } else {
+//        func sendData(to peripheral: CBPeripheral, data: Data) {
+//            let characteristicUUID = CBUUID(string: "2A56")
+//            if let characteristic = findCharacteristic(with: characteristicUUID, for: peripheral) {
+//                peripheral.writeValue(data, for: characteristic, type: .withoutResponse)
+//            } else {
+//                print("Characteristic not found")
+//            }
+//        }
+    func sendData(to peripheral: CBPeripheral, data: Data) {
+            guard let characteristic = characteristicToWrite else {
                 print("Characteristic not found")
+                return
             }
+            peripheral.writeValue(data, for: characteristic, type: .withResponse)
+            print("Sent data to peripheral")
         }
     
         // GPT solution to CBCharacteristicUUID() error
