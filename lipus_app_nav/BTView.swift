@@ -21,6 +21,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject {
     @Published var connectedPeripheral: CBPeripheral?
 
     private var centralManager: CBCentralManager!
+    var peripheralNames: [CBPeripheral: String] = [:] // Store names for peripherals
 
     override init() {
         super.init()
@@ -39,6 +40,9 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if !discoveredPeripherals.contains(peripheral) {
             discoveredPeripherals.append(peripheral)
+            let localName = advertisementData[CBAdvertisementDataLocalNameKey] as? String
+            peripheralNames[peripheral] = localName ?? "Unknown Device"
+            print("Discovered peripheral: \(peripheralNames[peripheral] ?? "Unknown Device")")
         }
     }
     
@@ -164,14 +168,14 @@ struct BTView: View {
 
             List(bluetoothManager.discoveredPeripherals, id: \.identifier) { peripheral in
                 VStack(alignment: .leading) {
-                    Text(peripheral.name ?? "Unknown Device")
+                    Text(bluetoothManager.peripheralNames[peripheral] ?? "Unknown Device") // Fetch name from dictionary
                         .font(.headline)
                     Text("UUID: \(peripheral.identifier.uuidString)")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                     Button("Connect") {
-                                            bluetoothManager.connect(to: peripheral)
-                                        }
+                        bluetoothManager.connect(to: peripheral)
+                    }
                 }
             }
             
