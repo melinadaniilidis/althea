@@ -48,7 +48,7 @@ struct QuestionView: View {
         }
         // box for the question:
         .padding(.horizontal, 20)
-        .frame(width: 340, height: 450, alignment: .leading)
+        .frame(width: 340, height: 500, alignment: .leading)
         .background(Color(uiColor: .systemGray6))
         .cornerRadius(10)
         .shadow(color: Color(uiColor: .label).opacity(0.2), radius: 15)

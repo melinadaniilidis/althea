@@ -203,8 +203,8 @@ struct BTView: View {
     Button(action: {
                 bluetoothManager.toggleBluetooth()
             }) {
-        Text(bluetoothManager.isBluetoothEnabled ? "Turn Off Bluetooth" : "Turn On Bluetooth")
-                    .padding()
+//        Text(bluetoothManager.isBluetoothEnabled ? "Turn Off Bluetooth" : "Turn On Bluetooth")
+//                    .padding()
        }
             
             // TODO: implement turning off BT

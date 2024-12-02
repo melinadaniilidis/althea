@@ -34,7 +34,7 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", 
 //    .init(month: "Dec",day: 30, painLevel: 3)]
 
 struct PainDiagnosticsView: View {
-    @State private var selectedMonth: String = "Nov" // TODO: use built-in date/time features to display current time
+    @State private var selectedMonth: String = "Dec" // TODO: use built-in date/time features to display current time
     @State private var sampleData: [PainData] = []
     
 //        private var months: [String] {
@@ -123,16 +123,29 @@ struct PainDiagnosticsView: View {
 
     }
     // Function to generate random data points
-        private func generateRandomData() {
-            sampleData = months.flatMap { month in months.map { _ in
-                    PainData(
-                        month: month,
-                        day: Int.random(in: 1...31),
-                        painLevel: Int.random(in: 0...10)
-                    )
+    private func generateRandomData() {
+        var currentPainLevel = Int.random(in: 2...7) // Start with a moderate pain level
+
+        sampleData = months.flatMap { month in
+            (1...31).compactMap { day in
+                // Only include days before the 4th for December
+                if month == "Dec" && day >= 4 {
+                    return nil
                 }
+                
+                guard Int.random(in: 0...3) != 0 else { return nil } // Skip some days to simulate missing data
+                let painLevelChange = Int.random(in: -1...1) // Small change in pain level
+                currentPainLevel = max(0, min(10, currentPainLevel + painLevelChange)) // Ensure pain level stays between 0 and 10
+                return PainData(
+                    month: month,
+                    day: day,
+                    painLevel: currentPainLevel
+                )
             }
         }
+    }
+
+
 }
 
 // GPT STUFF:
