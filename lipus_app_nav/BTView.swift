@@ -6,13 +6,6 @@
 //
 
 import SwiftUI
-//
-//  BleutoothManager.swift
-//  CoreBluetoothExample
-//
-//  Created by Mourad KIRAT on 23/02/2024.
-//
-
 import CoreBluetooth
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CBPeripheralDelegate {
@@ -37,15 +30,16 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CB
             isBluetoothEnabled = false
         }
     }
-
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        if !discoveredPeripherals.contains(peripheral) {
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
+        // Check if the peripheral has a local name
+        if let localName = advertisementData[CBAdvertisementDataLocalNameKey] as? String, !discoveredPeripherals.contains(peripheral) {
             discoveredPeripherals.append(peripheral)
-            let localName = advertisementData[CBAdvertisementDataLocalNameKey] as? String
-            peripheralNames[peripheral] = localName ?? "Unknown Device"
-            print("Discovered peripheral: \(peripheralNames[peripheral] ?? "Unknown Device")")
+            peripheralNames[peripheral] = localName // Store the name for display
+            print("Discovered peripheral: \(localName)")
         }
     }
+
     
     // Connect to the selected peripheral
     func connect(to peripheral: CBPeripheral) {
@@ -109,16 +103,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CB
     
     // MARK: - Write Data to the Device
 
-        // Function to send data to a connected peripheral
+    // Function to send data to a connected peripheral
     // transmitting data
-//        func sendData(to peripheral: CBPeripheral, data: Data) {
-//            let characteristicUUID = CBUUID(string: "2A56")
-//            if let characteristic = findCharacteristic(with: characteristicUUID, for: peripheral) {
-//                peripheral.writeValue(data, for: characteristic, type: .withoutResponse)
-//            } else {
-//                print("Characteristic not found")
-//            }
-//        }
     func sendData(to peripheral: CBPeripheral, data: Data) {
             guard let characteristic = characteristicToWrite else {
                 print("Characteristic not found")
@@ -126,90 +112,38 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CB
             }
             peripheral.writeValue(data, for: characteristic, type: .withResponse)
             print("Sent data to peripheral")
-        }
+    }
     
-        // GPT solution to CBCharacteristicUUID() error
-        func findCharacteristic(with uuid: CBUUID, for peripheral: CBPeripheral) -> CBCharacteristic? {
-            guard let services = peripheral.services else { return nil }
-            for service in services {
-                if let characteristics = service.characteristics {
-                    for characteristic in characteristics {
-                        if characteristic.uuid == uuid {
+    // GPT solution to CBCharacteristicUUID() error
+    func findCharacteristic(with uuid: CBUUID, for peripheral: CBPeripheral) -> CBCharacteristic? {
+        guard let services = peripheral.services else { return nil }
+        for service in services {
+            if let characteristics = service.characteristics {
+                for characteristic in characteristics {
+                    if characteristic.uuid == uuid {
                             return characteristic
-                        }
                     }
                 }
             }
-            return nil
         }
-//        func sendData(_ data: Data) {
-//            guard let peripheral = connectedPeripheral else {
-//                print("No peripheral connected")
-//                return
-//            }
-//
-//            // Ensure the peripheral has services and characteristics
-//
-//            peripheral.discoverServices(nil)
-//            guard let services = peripheral.services else {
-//                print("Peripheral does not have services")
-//                return
-//            }
-//
-//            var n = 0
-//            // Assuming the first service is the one we need
-//            for service in services {
-//                print(n)
-//                n = n+1
-//                // For each service, we look for characteristics
-//                if let characteristics = service.characteristics {
-//                    for characteristic in characteristics {
-//                        // Check if the characteristic supports write (e.g., check properties)
-//                        if characteristic.properties.contains(.write) {
-//                            // Write the data to the characteristic
-//                            peripheral.writeValue(data, for: characteristic, type: .withResponse)
-//                            print("Sent data to characteristic: \(characteristic.uuid.uuidString)")
-//                            return
-//                        }
-//                    }
-//                }
-//            }
-//
-//            print("No writable characteristic found")
-//        }
-    // Toggle Bluetooth state (scan on/off)
-//        func toggleBluetooth() {
-//            if isBluetoothEnabled {
-//                // Turn off Bluetooth
-//                centralManager.stopScan() // Stop scanning for devices
-//                if let peripheral = connectedPeripheral {
-//                    disconnect(from: peripheral) // Disconnect from the peripheral if connected
-//                }
-//                centralManager = nil // Clear centralManager
-//            } else {
-//                // Turn on Bluetooth
-//                centralManager = CBCentralManager(delegate: self, queue: nil)
-//            }
-//        }
-    
+        return nil
+    }
 }
 
 struct BTView: View {
- @StateObject var bluetoothManager = BluetoothManager() // this is Bluetooth manager
-
+    @StateObject var bluetoothManager = BluetoothManager() // this is Bluetooth manager
     var body: some View {
-
         VStack {
-    Button(action: {
-                bluetoothManager.toggleBluetooth()
+            Button(action: {
+            bluetoothManager.toggleBluetooth()
             }) {
 //        Text(bluetoothManager.isBluetoothEnabled ? "Turn Off Bluetooth" : "Turn On Bluetooth")
 //                    .padding()
-       }
+            }
             
-            // TODO: implement turning off BT
+            // TODO: implement turning off BT -- or not
             
-  Text("Bluetooth is \(bluetoothManager.isBluetoothEnabled ? "enabled" : "disabled")")
+            Text("Bluetooth is \(bluetoothManager.isBluetoothEnabled ? "enabled" : "disabled")")
                 .padding()
 
             List(bluetoothManager.discoveredPeripherals, id: \.identifier) { peripheral in
@@ -226,28 +160,26 @@ struct BTView: View {
             }
             
             // If a peripheral is connected, show the "Disconnect" button
-                        if let connectedPeripheral = bluetoothManager.connectedPeripheral {
-                            VStack {
-                                Text("Connected to: \(connectedPeripheral.name ?? "Unknown Device")")
-                                    .font(.headline)
-                                    .padding()
+            if let connectedPeripheral = bluetoothManager.connectedPeripheral {
+                VStack {
+                    Text("Connected to: \(connectedPeripheral.name ?? "Unknown Device")")
+                        .font(.headline)
+                        .padding()
                                 
-                                Button("Disconnect") {
-                                    bluetoothManager.disconnect(from: connectedPeripheral)
-                                }
-                                .padding()
-                                .foregroundColor(.red)
+                    Button("Disconnect") {
+                        bluetoothManager.disconnect(from: connectedPeripheral)
+                    }
+                    .padding()
+                    .foregroundColor(.red)
                                 
-                                Button("Send Data") {
-                                    let data = Data("Hello, peripheral!".utf8) // Create some data to send
-//                                    peripheral.writeValue(data, for: characteristic, type: .withResponse)
-                                    bluetoothManager.sendData(to: connectedPeripheral, data: data) // Send the data to the connected peripheral
-                                                    }
-                                    .padding()
-                                    .foregroundColor(.green)
-                            }
-                        }
-
+                    Button("Send Data") {
+                        let data = Data("Hello, peripheral!".utf8) // Create some data to send
+                        bluetoothManager.sendData(to: connectedPeripheral, data: data) // Send the data to the connected peripheral
+                    }
+                    .padding()
+                    .foregroundColor(.green)
+                }
+            }
         }
     }
 }

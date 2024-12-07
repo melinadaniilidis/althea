@@ -16,15 +16,11 @@
 		744363DD2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363DC2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift */; };
 		744363EA2CDD9D2700290069 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363E92CDD9D2700290069 /* HomePageView.swift */; };
 		744363EC2CDD9D8800290069 /* PainDiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */; };
-		744363F02CDD9E2A00290069 /* UserProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363EF2CDD9E2A00290069 /* UserProfileDataView.swift */; };
 		744363F22CDE1EED00290069 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363F12CDE1EEC00290069 /* SessionView.swift */; };
 		74DB4F302CFCFC7A00B7D12F /* CurrentSessionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */; };
 		74DB4F322CFD012400B7D12F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */; };
 		74F395C62CF0680600D9D9CF /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395C52CF0680600D9D9CF /* QuestionView.swift */; };
 		74F395C82CF06B4800D9D9CF /* QContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395C72CF06B4800D9D9CF /* QContentView.swift */; };
-		74F395CC2CF1021500D9D9CF /* BTDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395CB2CF1021500D9D9CF /* BTDetails.swift */; };
-		74F395CE2CF1026500D9D9CF /* BTContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395CD2CF1026500D9D9CF /* BTContentView.swift */; };
-		74F395D02CF1070200D9D9CF /* BTDeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395CF2CF1070200D9D9CF /* BTDeviceList.swift */; };
 		74F395D22CF111B200D9D9CF /* BTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395D12CF111AC00D9D9CF /* BTView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,15 +55,11 @@
 		744363DC2CDD9CB900290069 /* lipus_app_navUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lipus_app_navUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		744363E92CDD9D2700290069 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainDiagnosticsView.swift; sourceTree = "<group>"; };
-		744363EF2CDD9E2A00290069 /* UserProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataView.swift; sourceTree = "<group>"; };
 		744363F12CDE1EEC00290069 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionBox.swift; sourceTree = "<group>"; };
 		74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
 		74F395C52CF0680600D9D9CF /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		74F395C72CF06B4800D9D9CF /* QContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QContentView.swift; sourceTree = "<group>"; };
-		74F395CB2CF1021500D9D9CF /* BTDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDetails.swift; sourceTree = "<group>"; };
-		74F395CD2CF1026500D9D9CF /* BTContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTContentView.swift; sourceTree = "<group>"; };
-		74F395CF2CF1070200D9D9CF /* BTDeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDeviceList.swift; sourceTree = "<group>"; };
 		74F395D12CF111AC00D9D9CF /* BTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,13 +118,9 @@
 				744363C52CDD9CB900290069 /* Preview Content */,
 				744363E92CDD9D2700290069 /* HomePageView.swift */,
 				744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */,
-				744363EF2CDD9E2A00290069 /* UserProfileDataView.swift */,
 				744363F12CDE1EEC00290069 /* SessionView.swift */,
 				74F395C52CF0680600D9D9CF /* QuestionView.swift */,
 				74F395C72CF06B4800D9D9CF /* QContentView.swift */,
-				74F395CB2CF1021500D9D9CF /* BTDetails.swift */,
-				74F395CD2CF1026500D9D9CF /* BTContentView.swift */,
-				74F395CF2CF1070200D9D9CF /* BTDeviceList.swift */,
 				74F395D12CF111AC00D9D9CF /* BTView.swift */,
 				74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */,
 				74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */,
@@ -297,17 +285,13 @@
 			files = (
 				74DB4F322CFD012400B7D12F /* ConnectionStatusView.swift in Sources */,
 				744363F22CDE1EED00290069 /* SessionView.swift in Sources */,
-				74F395CE2CF1026500D9D9CF /* BTContentView.swift in Sources */,
 				744363C12CDD9CB600290069 /* ContentView.swift in Sources */,
-				744363F02CDD9E2A00290069 /* UserProfileDataView.swift in Sources */,
 				74F395C62CF0680600D9D9CF /* QuestionView.swift in Sources */,
 				74DB4F302CFCFC7A00B7D12F /* CurrentSessionBox.swift in Sources */,
 				74F395C82CF06B4800D9D9CF /* QContentView.swift in Sources */,
-				74F395D02CF1070200D9D9CF /* BTDeviceList.swift in Sources */,
 				744363EA2CDD9D2700290069 /* HomePageView.swift in Sources */,
 				74F395D22CF111B200D9D9CF /* BTView.swift in Sources */,
 				744363BF2CDD9CB600290069 /* lipus_app_navApp.swift in Sources */,
-				74F395CC2CF1021500D9D9CF /* BTDetails.swift in Sources */,
 				744363EC2CDD9D8800290069 /* PainDiagnosticsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

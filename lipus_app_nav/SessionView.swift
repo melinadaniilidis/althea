@@ -3,11 +3,7 @@ import SwiftUI
 struct SessionView: View {
     @ObservedObject var sessionManager: SessionManager
     @Binding var isConnected: Bool
-//    var sessionTimeRemaining: Int
-
-//    @State private var isPaused = false
-//    @State private var nextSessionDate = Date()
-    @State private var nextSessionDate = "12/6/2024"
+    @State private var nextSessionDate = "12/6/2024" // TODO: not hardcode this
 
     var body: some View {
         VStack {
@@ -19,31 +15,12 @@ struct SessionView: View {
             HStack {
                 ConnectionStatusView(isConnected: $isConnected)
                 Spacer()
-//                Image(systemName: "battery.100") // Replace with actual battery status
-//                    .foregroundColor(.green)
             }
             .padding()
 
             // Current Session Box
-//            CurrentSessionBox(isConnected: isConnected, sessionTimeRemaining: sessionTimeRemaining)
-//            CurrentSessionBox(isConnected: isConnected)
-//                .padding()
             CurrentSessionBox(sessionManager: sessionManager, isConnected: isConnected)
-                            .padding()
-
-            // Pause Button
-//            Button(action: {
-//                isPaused.toggle()
-//            }) {
-//                Text(isPaused ? "RESUME" : "PAUSE")
-//                    .font(.headline)
-//                    .foregroundColor(.white)
-//                    .padding()
-//                    .frame(maxWidth: .infinity)
-//                    .background(isPaused ? Color.green : Color.red)
-//                    .cornerRadius(10)
-//            }
-//            .padding()
+            .padding()
 
             // Next Session Box
             VStack {
@@ -55,13 +32,6 @@ struct SessionView: View {
                         .foregroundColor(.purple)
                         .frame(maxWidth: .infinity, alignment: .center)
                     Spacer()
-//                    Button(action: {
-//                        // Logic for editing next session date
-//                    }) {
-//                        Text("Edit")
-//                            .foregroundColor(.blue)
-//                            .underline()
-//                    }
                 }
             }
             .padding()
@@ -73,10 +43,15 @@ struct SessionView: View {
     }
 }
 
+struct SessionView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a mock SessionManager instance
+        let mockSessionManager = SessionManager()
 
+        // Provide a Binding for isConnected
+        let mockIsConnected = Binding.constant(true)
 
-//struct SessionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SessionView().preferredColorScheme(.dark)
-//    }
-//}
+        return SessionView(sessionManager: mockSessionManager, isConnected: mockIsConnected)
+            .preferredColorScheme(.dark)
+    }
+}

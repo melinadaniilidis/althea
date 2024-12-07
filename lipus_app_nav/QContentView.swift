@@ -142,7 +142,6 @@ class QManager: ObservableObject {
 
 struct ResultsView: View {
     let score: String
-//    @Environment(\.presentationMode) var presentationMode // For dismissing modal
 
     var body: some View {
         VStack {
@@ -179,6 +178,10 @@ struct QContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text("Questionnaire")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
                 TabView {
                     ForEach(manager.mockQuestions.indices, id: \.self) { index in
                         VStack {

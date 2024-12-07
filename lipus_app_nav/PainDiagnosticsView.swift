@@ -41,9 +41,9 @@ struct PainDiagnosticsView: View {
 //            Array(Set(sampleData.map { $0.month })).sorted() // Unique, sorted list of months
 //        }
         
-        private var filteredData: [PainData] {
-            sampleData.filter { $0.month == selectedMonth }
-        }
+    private var filteredData: [PainData] {
+        sampleData.filter { $0.month == selectedMonth }
+    }
     
     var body: some View {
         VStack {
@@ -52,28 +52,28 @@ struct PainDiagnosticsView: View {
                 .fontWeight(.bold)
             
             // Dropdown menu for selecting a month
-                        Menu {
-                            ForEach(months, id: \.self) { month in
-                                Button(action: {
-                                    selectedMonth = month
-                                }) {
-                                    Text(month)
-                                }
-                            }
-                        } label: {
-                            HStack {
-                                Text("Month: \(selectedMonth)")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 5)
-                                    .background(Color.blue)
-                                    .cornerRadius(8)
-                                Spacer()
-                            }
-                            .frame(maxWidth: 150)
+            Menu {
+                ForEach(months, id: \.self) { month in
+                    Button(action: {
+                        selectedMonth = month
+                    }) {
+                        Text(month)
                         }
-                        .padding(.leading)
+                }
+            } label: {
+                HStack {
+                    Text("Month: \(selectedMonth)")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                    Spacer()
+                }
+                .frame(maxWidth: 150)
+            }
+            .padding(.leading)
 
             Chart(filteredData) { entry in
                 LineMark(
@@ -88,7 +88,6 @@ struct PainDiagnosticsView: View {
                 AxisMarks(values: Array(stride(from: 1, through: 31, by: 5))) { value in
                     AxisValueLabel()
                         .font(.system(size: 14, weight: .bold))
-
                 }
             }
             .chartXAxisLabel(position: .bottom, alignment: .center) {
@@ -101,7 +100,6 @@ struct PainDiagnosticsView: View {
                         .font(.system(size: 14, weight: .bold))
                 }
             }
-
             .chartYAxisLabel(position: .leading, alignment: .center) {
                 Text("Pain level")
                     .font(.system(size: 16, weight: .bold))
@@ -109,7 +107,6 @@ struct PainDiagnosticsView: View {
                     .fixedSize() // Prevents the label from being stretched
                     .frame(width: 20, height: 20)
             }
-
             .frame(height: 250) // Adjust height as needed
             .padding()
             Spacer()
@@ -117,11 +114,12 @@ struct PainDiagnosticsView: View {
         }
         .padding()
         .onAppear {
-                    generateRandomData()
-                }
+            generateRandomData()
+        }
 
 
     }
+    
     // Function to generate random data points
     private func generateRandomData() {
         var currentPainLevel = Int.random(in: 2...7) // Start with a moderate pain level
@@ -144,56 +142,7 @@ struct PainDiagnosticsView: View {
             }
         }
     }
-
-
 }
-
-// GPT STUFF:
-
-//struct PainDiagnosticsView: View {
-//    @State private var painHistory = [4, 5, 3, 6, 4] // Sample pain history data
-//
-//    var body: some View {
-//        VStack {
-//            // Pain History Chart Placeholder
-//            Text("Pain History Chart")
-//                .font(.headline)
-//                .padding()
-//
-//            List(painHistory.indices, id: \.self) { index in
-//                HStack {
-//                    Text("Day \(index + 1)")
-//                    Spacer()
-//                    Text("Pain Level: \(painHistory[index])")
-//                }
-//            }
-//
-//            // Edit Today's Pain Level
-//            VStack {
-//                Text("Edit Today's Pain Level")
-//                    .font(.headline)
-//                // Pain Level Editor
-//                Stepper(value: $painHistory[0], in: 0...10) {
-//                    Text("Today's Pain Level: \(painHistory[0])")
-//                }
-//            }
-//            .padding()
-//
-//            // User Profile Data Button
-//            NavigationLink(destination: UserProfileDataView()) {
-//                Text("User Profile Data")
-//                    .font(.headline)
-//                    .padding()
-//                    .background(Color.blue)
-//                    .foregroundColor(.white)
-//                    .cornerRadius(10)
-//            }
-//        }
-//        .navigationTitle("Pain Diagnostics")
-//        .padding()
-//    }
-//}
-
 
 struct PainDiagnosticsView_Previews: PreviewProvider {
     static var previews: some View {
