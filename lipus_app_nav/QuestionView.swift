@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct Question : Identifiable {
-    let id = UUID()
+struct Question : Identifiable, Decodable {
+    let id: Int
+    let createdAt: String
     let title: String
-    let answer: String
+//    let answer: String
     let options: [String]
     var selection: String? // option selected for the question
 }
@@ -29,13 +30,13 @@ struct QuestionView: View {
                         if question.selection == option {
                             Circle()
                                 .shadow(radius: 3)
-                                .frame(width: 24, height: 24)
+                                .frame(width: 20, height: 20)
                                 .foregroundColor(Color("AppColor"))
                         } else {
                             Circle()
                                 .stroke()
                                 .shadow(radius: 3)
-                                .frame(width: 24, height: 24)
+                                .frame(width: 20, height: 20)
                         }
                         
                     }
@@ -47,8 +48,8 @@ struct QuestionView: View {
             }
         }
         // box for the question:
-        .padding(.horizontal, 20)
-        .frame(width: 340, height: 500, alignment: .leading)
+        .padding(.horizontal, 5)
+        .frame(width: 340, height: 460, alignment: .leading)
         .background(Color(uiColor: .systemGray6))
         .cornerRadius(10)
         .shadow(color: Color(uiColor: .label).opacity(0.2), radius: 15)
@@ -57,6 +58,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(question: .constant(Question(title: "Q1", answer: "A", options: ["A", "B", "C", "D"])))
+        QuestionView(question: .constant(Question(id: 1, createdAt: "", title: "Q1", options: ["A", "B", "C", "D"])))
     }
 }

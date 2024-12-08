@@ -17,8 +17,11 @@
 		744363EA2CDD9D2700290069 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363E92CDD9D2700290069 /* HomePageView.swift */; };
 		744363EC2CDD9D8800290069 /* PainDiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */; };
 		744363F22CDE1EED00290069 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363F12CDE1EEC00290069 /* SessionView.swift */; };
+		74931F862D054D9800ADBE58 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74931F852D054D9800ADBE58 /* ResultsView.swift */; };
 		74DB4F302CFCFC7A00B7D12F /* CurrentSessionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */; };
 		74DB4F322CFD012400B7D12F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */; };
+		74DB4F352D04F2F400B7D12F /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 74DB4F342D04F2F400B7D12F /* Supabase */; };
+		74DB4F372D04F34400B7D12F /* QManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F362D04F34400B7D12F /* QManager.swift */; };
 		74F395C62CF0680600D9D9CF /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395C52CF0680600D9D9CF /* QuestionView.swift */; };
 		74F395C82CF06B4800D9D9CF /* QContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395C72CF06B4800D9D9CF /* QContentView.swift */; };
 		74F395D22CF111B200D9D9CF /* BTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395D12CF111AC00D9D9CF /* BTView.swift */; };
@@ -56,8 +59,10 @@
 		744363E92CDD9D2700290069 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainDiagnosticsView.swift; sourceTree = "<group>"; };
 		744363F12CDE1EEC00290069 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		74931F852D054D9800ADBE58 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionBox.swift; sourceTree = "<group>"; };
 		74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
+		74DB4F362D04F34400B7D12F /* QManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QManager.swift; sourceTree = "<group>"; };
 		74F395C52CF0680600D9D9CF /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		74F395C72CF06B4800D9D9CF /* QContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QContentView.swift; sourceTree = "<group>"; };
 		74F395D12CF111AC00D9D9CF /* BTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTView.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DB4F352D04F2F400B7D12F /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,8 @@
 				74F395D12CF111AC00D9D9CF /* BTView.swift */,
 				74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */,
 				74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */,
+				74DB4F362D04F34400B7D12F /* QManager.swift */,
+				74931F852D054D9800ADBE58 /* ResultsView.swift */,
 			);
 			path = lipus_app_nav;
 			sourceTree = "<group>";
@@ -169,6 +177,9 @@
 			dependencies = (
 			);
 			name = lipus_app_nav;
+			packageProductDependencies = (
+				74DB4F342D04F2F400B7D12F /* Supabase */,
+			);
 			productName = lipus_app_nav;
 			productReference = 744363BB2CDD9CB600290069 /* lipus_app_nav.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +252,9 @@
 				Base,
 			);
 			mainGroup = 744363B22CDD9CB600290069;
+			packageReferences = (
+				74DB4F332D04F2F400B7D12F /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 744363BC2CDD9CB600290069 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -284,10 +298,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DB4F322CFD012400B7D12F /* ConnectionStatusView.swift in Sources */,
+				74931F862D054D9800ADBE58 /* ResultsView.swift in Sources */,
 				744363F22CDE1EED00290069 /* SessionView.swift in Sources */,
 				744363C12CDD9CB600290069 /* ContentView.swift in Sources */,
 				74F395C62CF0680600D9D9CF /* QuestionView.swift in Sources */,
 				74DB4F302CFCFC7A00B7D12F /* CurrentSessionBox.swift in Sources */,
+				74DB4F372D04F34400B7D12F /* QManager.swift in Sources */,
 				74F395C82CF06B4800D9D9CF /* QContentView.swift in Sources */,
 				744363EA2CDD9D2700290069 /* HomePageView.swift in Sources */,
 				74F395D22CF111B200D9D9CF /* BTView.swift in Sources */,
@@ -648,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74DB4F332D04F2F400B7D12F /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74DB4F342D04F2F400B7D12F /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74DB4F332D04F2F400B7D12F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 744363B32CDD9CB600290069 /* Project object */;
 }
