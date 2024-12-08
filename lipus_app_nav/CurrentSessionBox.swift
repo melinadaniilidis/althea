@@ -68,7 +68,7 @@ struct CurrentSessionBox: View {
                 .foregroundColor(.white)
             
 //            if bluetoothManager.isConnected {
-            if isConnected {
+//            if isConnected {
                 // Time Remaining View
                 Text("Time:")
                     .font(.subheadline)
@@ -95,11 +95,11 @@ struct CurrentSessionBox: View {
                         .cornerRadius(10)
                 }
                 .padding(.top, 10)
-            } else {
-                Text("Connect to start a session")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
+//            } else {
+//                Text("Connect to start a session")
+//                    .font(.subheadline)
+//                    .foregroundColor(.gray)
+//            }
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))

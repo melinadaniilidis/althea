@@ -15,9 +15,9 @@ struct SessionView: View {
             
             // Connection Status and Battery
             HStack {
-                ConnectionStatusView(isConnected: $isConnected)
-//                ConnectionStatusView(bluetoothManager: bluetoothManager)
-                Spacer()
+//                ConnectionStatusView(isConnected: $isConnected)
+////                ConnectionStatusView(bluetoothManager: bluetoothManager)
+//                Spacer()
             }
             .padding()
 
