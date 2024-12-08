@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @StateObject var sessionManager = SessionManager()
+//    @StateObject var sessionManager = SessionManager()
+    
+    @StateObject var sessionManager = SessionManager(bluetoothManager: BluetoothManager.shared)
+    
     @State private var isConnected = false
+//    @State private var isConnected = BluetoothManager.shared.isConnected
     @State private var batteryLevel = 80
     
     var body: some View {
         VStack {
             ConnectionStatusView(isConnected: $isConnected)
+//            ConnectionStatusView(bluetoothManager: BluetoothManager.shared)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
             
@@ -42,8 +47,12 @@ struct HomePageView: View {
 
             // Current Session
             NavigationLink(destination: SessionView(sessionManager: sessionManager, isConnected: $isConnected)) {
-                            CurrentSessionBox(sessionManager: sessionManager, isConnected: isConnected)
-                        }
+                CurrentSessionBox(sessionManager: sessionManager, isConnected: isConnected)
+            }
+//            NavigationLink(destination:
+//            SessionView(sessionManager: sessionManager, bluetoothManager: BluetoothManager.shared)) {
+//                            CurrentSessionBox(sessionManager: sessionManager, bluetoothManager: BluetoothManager.shared)
+//                }
             .padding(20)
             
             // Pain Diagnostics

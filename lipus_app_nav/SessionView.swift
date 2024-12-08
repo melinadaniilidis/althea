@@ -3,6 +3,8 @@ import SwiftUI
 struct SessionView: View {
     @ObservedObject var sessionManager: SessionManager
     @Binding var isConnected: Bool
+//    @StateObject var bluetoothManager = BluetoothManager.shared
+//    var bluetoothManager: BluetoothManager
     @State private var nextSessionDate = "12/6/2024" // TODO: not hardcode this
 
     var body: some View {
@@ -14,12 +16,14 @@ struct SessionView: View {
             // Connection Status and Battery
             HStack {
                 ConnectionStatusView(isConnected: $isConnected)
+//                ConnectionStatusView(bluetoothManager: bluetoothManager)
                 Spacer()
             }
             .padding()
 
             // Current Session Box
             CurrentSessionBox(sessionManager: sessionManager, isConnected: isConnected)
+//            CurrentSessionBox(sessionManager: sessionManager, bluetoothManager: bluetoothManager)
             .padding()
 
             // Next Session Box
@@ -46,12 +50,16 @@ struct SessionView: View {
 struct SessionView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock SessionManager instance
-        let mockSessionManager = SessionManager()
+        let mockSessionManager = SessionManager(bluetoothManager: BluetoothManager.shared)
 
         // Provide a Binding for isConnected
         let mockIsConnected = Binding.constant(true)
+        
+//        let mockbluetoothManager = BluetoothManager.shared
 
         return SessionView(sessionManager: mockSessionManager, isConnected: mockIsConnected)
             .preferredColorScheme(.dark)
+//        return SessionView(sessionManager: mockSessionManager, bluetoothManager: mockbluetoothManager)
+//            .preferredColorScheme(.dark)
     }
 }

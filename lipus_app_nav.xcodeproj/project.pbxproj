@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		744363BF2CDD9CB600290069 /* lipus_app_navApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363BE2CDD9CB600290069 /* lipus_app_navApp.swift */; };
-		744363C12CDD9CB600290069 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363C02CDD9CB600290069 /* ContentView.swift */; };
 		744363C32CDD9CB900290069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744363C22CDD9CB900290069 /* Assets.xcassets */; };
 		744363C72CDD9CB900290069 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744363C62CDD9CB900290069 /* Preview Assets.xcassets */; };
 		744363D12CDD9CB900290069 /* lipus_app_navTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363D02CDD9CB900290069 /* lipus_app_navTests.swift */; };
@@ -18,6 +17,7 @@
 		744363EC2CDD9D8800290069 /* PainDiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */; };
 		744363F22CDE1EED00290069 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744363F12CDE1EEC00290069 /* SessionView.swift */; };
 		74931F862D054D9800ADBE58 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74931F852D054D9800ADBE58 /* ResultsView.swift */; };
+		74931F8A2D06116700ADBE58 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74931F892D06116700ADBE58 /* BluetoothManager.swift */; };
 		74DB4F302CFCFC7A00B7D12F /* CurrentSessionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */; };
 		74DB4F322CFD012400B7D12F /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */; };
 		74DB4F352D04F2F400B7D12F /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 74DB4F342D04F2F400B7D12F /* Supabase */; };
@@ -47,7 +47,6 @@
 /* Begin PBXFileReference section */
 		744363BB2CDD9CB600290069 /* lipus_app_nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lipus_app_nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		744363BE2CDD9CB600290069 /* lipus_app_navApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lipus_app_navApp.swift; sourceTree = "<group>"; };
-		744363C02CDD9CB600290069 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		744363C22CDD9CB900290069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744363C42CDD9CB900290069 /* lipus_app_nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lipus_app_nav.entitlements; sourceTree = "<group>"; };
 		744363C62CDD9CB900290069 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		744363EB2CDD9D8800290069 /* PainDiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainDiagnosticsView.swift; sourceTree = "<group>"; };
 		744363F12CDE1EEC00290069 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		74931F852D054D9800ADBE58 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		74931F892D06116700ADBE58 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		74DB4F2F2CFCFC7A00B7D12F /* CurrentSessionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionBox.swift; sourceTree = "<group>"; };
 		74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
 		74DB4F362D04F34400B7D12F /* QManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QManager.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				744363BE2CDD9CB600290069 /* lipus_app_navApp.swift */,
-				744363C02CDD9CB600290069 /* ContentView.swift */,
 				744363C22CDD9CB900290069 /* Assets.xcassets */,
 				744363C42CDD9CB900290069 /* lipus_app_nav.entitlements */,
 				744363C52CDD9CB900290069 /* Preview Content */,
@@ -132,6 +131,7 @@
 				74DB4F312CFD012400B7D12F /* ConnectionStatusView.swift */,
 				74DB4F362D04F34400B7D12F /* QManager.swift */,
 				74931F852D054D9800ADBE58 /* ResultsView.swift */,
+				74931F892D06116700ADBE58 /* BluetoothManager.swift */,
 			);
 			path = lipus_app_nav;
 			sourceTree = "<group>";
@@ -299,8 +299,8 @@
 			files = (
 				74DB4F322CFD012400B7D12F /* ConnectionStatusView.swift in Sources */,
 				74931F862D054D9800ADBE58 /* ResultsView.swift in Sources */,
+				74931F8A2D06116700ADBE58 /* BluetoothManager.swift in Sources */,
 				744363F22CDE1EED00290069 /* SessionView.swift in Sources */,
-				744363C12CDD9CB600290069 /* ContentView.swift in Sources */,
 				74F395C62CF0680600D9D9CF /* QuestionView.swift in Sources */,
 				74DB4F302CFCFC7A00B7D12F /* CurrentSessionBox.swift in Sources */,
 				74DB4F372D04F34400B7D12F /* QManager.swift in Sources */,
