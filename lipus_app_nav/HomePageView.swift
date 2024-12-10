@@ -10,7 +10,8 @@ import SwiftUI
 struct HomePageView: View {
 //    @StateObject var sessionManager = SessionManager()
     
-    @StateObject var sessionManager = SessionManager(bluetoothManager: BluetoothManager.shared)
+//    @StateObject var sessionManager = SessionManager(bluetoothManager: BluetoothManager.shared)
+    var sessionManager = SessionManager.shared
     
     @State private var isConnected = false // dummy for now
 //    @State private var isConnected = BluetoothManager.shared.isConnected

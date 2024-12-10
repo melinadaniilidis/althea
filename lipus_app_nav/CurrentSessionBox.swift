@@ -8,11 +8,14 @@ class SessionManager: ObservableObject {
 
     private var timerCancellable: AnyCancellable?
     var bluetoothManager: BluetoothManager
+    
 //    @EnvironmentObject var bluetoothManager: BluetoothManager
 
     init(bluetoothManager: BluetoothManager) {
         self.bluetoothManager = bluetoothManager
     }
+    
+    static let shared = SessionManager(bluetoothManager: BluetoothManager.shared) // Singleton instance
 
     func startSession() {
         guard !isRunning, let peripheral = bluetoothManager.connectedPeripheral else {
