@@ -5,7 +5,6 @@
 //  Created by Melina Daniilidis on 12/8/24.
 //
 
-//import Foundation
 import CoreBluetooth
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CBPeripheralDelegate {
@@ -13,7 +12,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CB
     static let shared = BluetoothManager() // Singleton instance
     
     @Published var isBluetoothEnabled = false
-//    @Published var isConnected = false
     @Published var discoveredPeripherals = [CBPeripheral]()
     @Published var connectedPeripheral: CBPeripheral?
 
@@ -60,11 +58,9 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, ObservableObject, CB
         print("Disconnected from peripheral: \(peripheral.name ?? "Unknown")")
         connectedPeripheral = nil
         characteristicToWrite = nil
-//        isConnected = false
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-//        isConnected = true
             print("Connected to peripheral: \(peripheral.name ?? "Unknown")")
             peripheral.discoverServices(nil) // Discover all services
     }

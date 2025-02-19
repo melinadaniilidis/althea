@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: DB implementation
-
 struct QContentView: View {
     @State var selection = 0
     @StateObject var manager = QManager()

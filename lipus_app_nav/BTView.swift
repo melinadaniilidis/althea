@@ -6,13 +6,8 @@
 //
 
 import SwiftUI
-//import CoreBluetooth
 
 struct BTView: View {
-//    @StateObject var bluetoothManager = BluetoothManager() // this is Bluetooth manager
-    
-//    @EnvironmentObject var bluetoothManager: BluetoothManager
-    
     @StateObject var bluetoothManager = BluetoothManager.shared
 
     var body: some View {
@@ -20,11 +15,7 @@ struct BTView: View {
             Button(action: {
             bluetoothManager.toggleBluetooth()
             }) {
-//        Text(bluetoothManager.isBluetoothEnabled ? "Turn Off Bluetooth" : "Turn On Bluetooth")
-//                    .padding()
             }
-            
-            // TODO: implement turning off BT -- or not
             
             Text("Bluetooth is \(bluetoothManager.isBluetoothEnabled ? "enabled" : "disabled")")
                 .padding()
@@ -61,27 +52,6 @@ struct BTView: View {
                     .opacity(sessionManager.isRunning ? 0.5 : 1.0) // Adjust opacity when disabled
                 }
             }
-
-//            if let connectedPeripheral = bluetoothManager.connectedPeripheral {
-//                VStack {
-//                    Text("Connected to: \(connectedPeripheral.name ?? "Unknown Device")")
-//                        .font(.headline)
-//                        .padding()
-//
-//                    Button("Disconnect") {
-//                        bluetoothManager.disconnect(from: connectedPeripheral)
-//                    }
-//                    .padding()
-//                    .foregroundColor(.red)
-//
-////                    Button("Send Data") {
-////                        let data = Data("Hello, peripheral!".utf8) // Create some data to send
-////                        bluetoothManager.sendData(to: connectedPeripheral, data: data) // Send the data to the connected peripheral
-////                    }
-////                    .padding()
-////                    .foregroundColor(.green)
-//                }
-//            }
         }
     }
 }

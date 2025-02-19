@@ -11,7 +11,6 @@ struct Question : Identifiable, Decodable {
     let id: Int
     let createdAt: String
     let title: String
-//    let answer: String
     let options: [String]
     var selection: String? // option selected for the question
 }

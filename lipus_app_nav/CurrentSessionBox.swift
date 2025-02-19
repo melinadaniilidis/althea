@@ -9,8 +9,6 @@ class SessionManager: ObservableObject {
     private var timerCancellable: AnyCancellable?
     var bluetoothManager: BluetoothManager
     
-//    @EnvironmentObject var bluetoothManager: BluetoothManager
-
     init(bluetoothManager: BluetoothManager) {
         self.bluetoothManager = bluetoothManager
     }
@@ -62,7 +60,6 @@ class SessionManager: ObservableObject {
 struct CurrentSessionBox: View {
     @ObservedObject var sessionManager: SessionManager
     var isConnected: Bool
-//    var bluetoothManager: BluetoothManager
 
     var body: some View {
         VStack {

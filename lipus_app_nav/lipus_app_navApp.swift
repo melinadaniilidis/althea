@@ -9,13 +9,10 @@ import SwiftUI
 
 @main
 struct lipus_app_navApp: App {
-//    @StateObject var bluetoothManager = BluetoothManager()
-    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 HomePageView()
-//                    .environmentObject(bluetoothManager) // Inject the instance
             }
         }
     }
