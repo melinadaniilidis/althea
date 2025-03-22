@@ -37,7 +37,7 @@ struct ResultsView: View {
                 .padding()
             
             Spacer()
-            
+                        
             Button {
                 dismiss()
             } label: {
@@ -73,6 +73,11 @@ struct ResultsView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .padding(.bottom, 50)
         .navigationBarBackButtonHidden(true) // Hide default back button
+        .onChange(of: manager.quizPlan.duration) { newDuration in
+            if newDuration > 0 {
+                SessionManager.shared.updateDuration(from: manager.quizPlan)
+            }
+        }
     }
 }
 

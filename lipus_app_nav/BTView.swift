@@ -27,29 +27,20 @@ struct BTView: View {
                     Text("UUID: \(peripheral.identifier.uuidString)")
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                    Button("Connect") {
-                        bluetoothManager.connect(to: peripheral)
-                    }
-                }
-            }
-            
-            // If a peripheral is connected, show the "Disconnect" button
-            if let connectedPeripheral = bluetoothManager.connectedPeripheral {
-                VStack {
-                    Text("Connected to: \(connectedPeripheral.name ?? "Unknown Device")")
-                        .font(.headline)
-                        .padding()
 
-                    // Use SessionManager to track session state
-                    let sessionManager = SessionManager.shared
-
-                    Button("Disconnect") {
-                        bluetoothManager.disconnect(from: connectedPeripheral)
+                    // Toggleable Connect/Disconnect Button
+                    Button(action: {
+                        if bluetoothManager.connectedPeripheral == peripheral {
+                            bluetoothManager.disconnect(from: peripheral)
+                        } else {
+                            bluetoothManager.connect(to: peripheral)
+                        }
+                    }) {
+                        Text(bluetoothManager.connectedPeripheral == peripheral ? "Disconnect" : "Connect")
+                            .foregroundColor(bluetoothManager.connectedPeripheral == peripheral ? .red : .blue)
                     }
-                    .padding()
-                    .foregroundColor(.red)
-                    .disabled(sessionManager.isRunning) // Disable button if session is running
-                    .opacity(sessionManager.isRunning ? 0.5 : 1.0) // Adjust opacity when disabled
+                    .disabled(SessionManager.shared.isRunning) // Disable if session is running
+                    .opacity(SessionManager.shared.isRunning ? 0.5 : 1.0) // Make button faded when disabled
                 }
             }
         }

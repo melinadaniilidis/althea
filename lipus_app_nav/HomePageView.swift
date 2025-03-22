@@ -44,15 +44,15 @@ struct HomePageView: View {
             .padding(20)
             
             // Pain Diagnostics
-            NavigationLink(destination: PainDiagnosticsView()) {
-                VStack {
-                    Text("Diagnostics")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                }
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.white))
-            }
+//            NavigationLink(destination: PainDiagnosticsView()) {
+//                VStack {
+//                    Text("Diagnostics")
+//                        .font(.largeTitle)
+//                        .foregroundColor(.white)
+//                }
+//                .padding()
+//                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.white))
+//            }
 
             Spacer()
         }

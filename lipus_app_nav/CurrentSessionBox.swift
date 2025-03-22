@@ -4,16 +4,22 @@ import Combine
 // SessionManager Class
 class SessionManager: ObservableObject {
     @Published var isRunning: Bool = false
-    @Published var timeRemaining: Int = 1500 // Example: 10 minutes in seconds
+    @Published var timeRemaining: Int = 0 // Default 0 min
 
     private var timerCancellable: AnyCancellable?
     var bluetoothManager: BluetoothManager
     
+    static let shared = SessionManager(bluetoothManager: BluetoothManager.shared)
+    
     init(bluetoothManager: BluetoothManager) {
         self.bluetoothManager = bluetoothManager
     }
+        
+    // Function to update timeRemaining dynamically
+    func updateDuration(from quizPlan: TreatmentPlan) {
+        self.timeRemaining = quizPlan.duration * 60
+    }
     
-    static let shared = SessionManager(bluetoothManager: BluetoothManager.shared) // Singleton instance
 
     func startSession() {
         guard !isRunning, let peripheral = bluetoothManager.connectedPeripheral else {
