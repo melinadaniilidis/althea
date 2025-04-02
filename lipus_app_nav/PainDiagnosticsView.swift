@@ -122,26 +122,87 @@ struct PainDiagnosticsView: View {
     
     // Function to generate random data points
     private func generateRandomData() {
-        var currentPainLevel = Int.random(in: 2...7) // Start with a moderate pain level
 
-        sampleData = months.flatMap { month in
-            (1...31).compactMap { day in
-                // Only include days before the 4th for December
-                if month == "Dec" && day >= 4 {
-                    return nil
+            let monthPainLevels: [String: Int] = [
+
+                "Jan": 8,  // High pain levels in January
+
+                "Feb": 6,  // Decrease in February
+
+                "Mar": 4,  // Further decrease in March
+
+                "Apr": 2   // Lowest pain levels in April
+
+            ]
+
+            
+
+            var currentPainLevel = 8 // Start high in January
+
+            
+
+            sampleData = months.flatMap { month in
+
+                (1...31).compactMap { day in
+
+                    guard Int.random(in: 0...3) != 0 else { return nil } // Skip some days to simulate missing data
+
+                    
+
+                    if let basePainLevel = monthPainLevels[month] {
+
+                        // Ensure a steady decrease from Jan to Apr
+
+                        currentPainLevel = max(0, min(10, basePainLevel + Int.random(in: -1...0)))
+
+                    } else {
+
+                        // Random fluctuations for other months
+
+                        let painLevelChange = Int.random(in: -1...1) // Small change in pain level
+
+                        currentPainLevel = max(0, min(10, currentPainLevel + painLevelChange))
+
+                    }
+
+                    
+
+                    return PainData(
+
+                        month: month,
+
+                        day: day,
+
+                        painLevel: currentPainLevel
+
+                    )
+
                 }
-                
-                guard Int.random(in: 0...3) != 0 else { return nil } // Skip some days to simulate missing data
-                let painLevelChange = Int.random(in: -1...1) // Small change in pain level
-                currentPainLevel = max(0, min(10, currentPainLevel + painLevelChange)) // Ensure pain level stays between 0 and 10
-                return PainData(
-                    month: month,
-                    day: day,
-                    painLevel: currentPainLevel
-                )
+
             }
+
         }
-    }
+//    private func generateRandomData() {
+//        var currentPainLevel = Int.random(in: 2...7) // Start with a moderate pain level
+//
+//        sampleData = months.flatMap { month in
+//            (1...31).compactMap { day in
+//                // Only include days before the 4th for December
+//                if month == "Dec" && day >= 4 {
+//                    return nil
+//                }
+//
+//                guard Int.random(in: 0...3) != 0 else { return nil } // Skip some days to simulate missing data
+//                let painLevelChange = Int.random(in: -1...1) // Small change in pain level
+//                currentPainLevel = max(0, min(10, currentPainLevel + painLevelChange)) // Ensure pain level stays between 0 and 10
+//                return PainData(
+//                    month: month,
+//                    day: day,
+//                    painLevel: currentPainLevel
+//                )
+//            }
+//        }
+//    }
 }
 
 struct PainDiagnosticsView_Previews: PreviewProvider {

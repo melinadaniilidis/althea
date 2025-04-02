@@ -3,7 +3,7 @@ import SwiftUI
 struct SessionView: View {
     @ObservedObject var sessionManager: SessionManager
     @Binding var isConnected: Bool
-    @State private var nextSessionDate = "3/25/2025" // TODO: not hardcode this
+    @State private var nextSessionDate = "4/5/2025" // TODO: not hardcode this
 
     var body: some View {
         VStack {
