@@ -34,7 +34,7 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", 
 //    .init(month: "Dec",day: 30, painLevel: 3)]
 
 struct PainDiagnosticsView: View {
-    @State private var selectedMonth: String = "Dec" // TODO: use built-in date/time features to display current time
+    @State private var selectedMonth: String = "Mar" // TODO: use built-in date/time features to display current time
     @State private var sampleData: [PainData] = []
     
 //        private var months: [String] {
